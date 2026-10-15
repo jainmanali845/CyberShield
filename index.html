@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030712">
+  <meta name="description" content="CyberShield AI - Futuristic cybersecurity awareness assistant and suspicious message analyzer dashboard.">
+  <title>CyberShield AI | Cybersecurity Operations Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Dashboard Navigation">
+      <a class="brand" href="#" aria-label="CyberShield AI Home">
+        <span class="brand-icon" aria-hidden="true">🛡️</span>
+        <span>CyberShield <small>AI SECURITY ASSISTANT</small></span>
+      </a>
+
+      <div class="sidebar-label" id="nav-label">YOUR SECURITY SPACE</div>
+
+      <nav aria-labelledby="nav-label" class="sidebar-nav">
+        <button type="button" class="nav-item active" data-mode="chat">
+          <span aria-hidden="true">💬</span> AI Assistant
+        </button>
+        <button type="button" class="nav-item" data-mode="phishing">
+          <span aria-hidden="true">🔎</span> Phishing Analysis
+        </button>
+        <button type="button" class="nav-item" data-mode="quiz">
+          <span aria-hidden="true">🎯</span> Security Quiz
+        </button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="status-dot" aria-hidden="true"></span>
+        <strong>Security Awareness</strong>
+        <p>Think before you click. Verify before you trust.</p>
+      </div>
+
+      <div class="sidebar-footer">
+        <span aria-hidden="true">🔒</span> Learn safely. Browse confidently.
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">YOUR DIGITAL SAFETY COMPANION</div>
+          <h1 id="page-title">Cybersecurity Assistant</h1>
+        </div>
+        <div class="online-badge" id="connection-badge" role="status" aria-live="polite">
+          <span class="status-dot" id="connection-dot"></span>
+          <span id="connection-text">Demo Mode (Offline)</span>
+        </div>
+      </header>
+
+      <section class="welcome" id="welcome" aria-labelledby="welcome-heading">
+        <div class="hero-shield" aria-hidden="true">🛡️</div>
+        <p class="eyebrow">WELCOME TO CYBERSHIELD AI</p>
+        <h2 id="welcome-heading">Stay one step ahead<br>of online threats.</h2>
+        <p class="welcome-text">
+          Ask questions, review suspicious messages for warning signs, and build
+          resilient digital habits with your cybersecurity companion.
+        </p>
+
+        <div class="quick-actions" role="region" aria-label="Quick Actions">
+          <button type="button" class="quick-card" data-prompt="Explain common signs of a phishing message with realistic examples.">
+            <span aria-hidden="true">🔎</span>
+            <strong>Learn about phishing</strong>
+            <small>Recognize common tactics</small>
+          </button>
+          <button type="button" class="quick-card" data-mode="phishing">
+            <span aria-hidden="true">🛡️</span>
+            <strong>Check suspicious message</strong>
+            <small>Review warning signs safely</small>
+          </button>
+          <button type="button" class="quick-card" data-mode="quiz">
+            <span aria-hidden="true">🎯</span>
+            <strong>Take a security quiz</strong>
+            <small>Test your cybersecurity knowledge</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="chat-panel" aria-label="Conversation Panel">
+        <div class="chat-heading">
+          <div>
+            <strong>Conversation Console</strong>
+            <p>Safety rule: Never share actual passwords, OTPs, or recovery codes.</p>
+          </div>
+          <button type="button" id="clear-chat" class="secondary-button" aria-label="Start new conversation">New chat</button>
+        </div>
+
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Message history">
+          <div class="message assistant">
+            <div class="avatar" aria-hidden="true">🛡️</div>
+            <div class="bubble">
+              <strong>Hello! I'm CyberShield AI.</strong>
+              <p>I can help explain security concepts, analyze warning indicators in suspicious messages, and test your cyber hygiene.</p>
+              <p>How can I assist your digital defense today?</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="status" class="status-message" role="status" aria-live="polite"></div>
+
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message-input">Your message</label>
+          <textarea
+            id="message-input"
+            rows="1"
+            maxlength="4000"
+            placeholder="Ask about cybersecurity or paste a suspicious message..."
+            required
+            aria-label="Type your message"
+          ></textarea>
+          <button id="send-button" type="submit" aria-label="Send message">➤</button>
+        </form>
+
+        <p class="privacy-note">
+          Educational guidance only. Real threat verification requires dedicated security tooling. Never share sensitive data.
+        </p>
+      </section>
+
+      <footer class="page-footer">
+        CyberShield AI · Cybersecurity Awareness Project
+      </footer>
+    </main>
+  </div>
+
+
+  <script src="script.js"></script>
+
+  <!-- n8n Chat Widget -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+    rel="stylesheet"
+  />
+
+  <script type="module">
+    import { createChat } from
+      'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: https://goyalrushita.app.n8n.cloud/webhook/4c069cf8-0b56-4f6c-86dc-c7e50f65fb7e/chat,
+      mode: 'window',
+      initialMessages: [
+        'Hi! I am CyberShield AI.',
+        'Ask me about phishing, passwords, or online safety.'
+      ],
+      i18n: {
+        en: {
+          title: 'CyberShield AI',
+          subtitle: 'Your cybersecurity awareness assistant',
+          inputPlaceholder: 'Ask a cybersecurity question...'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
